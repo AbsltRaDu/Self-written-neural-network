@@ -1,0 +1,1 @@
+# Samopisnaya-neyronnaya-set-25-5-000-Self-written-neural-network
