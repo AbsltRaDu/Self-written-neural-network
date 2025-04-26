@@ -1,1 +1,1 @@
-# Samopisnaya-neyronnaya-set-25-5-000-Self-written-neural-network
+Учебный проект по написанию собственного конструктора полносвязной нейронной сети
