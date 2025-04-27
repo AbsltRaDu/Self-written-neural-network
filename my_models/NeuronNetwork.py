@@ -32,6 +32,16 @@ class NeuronNetwork():
             model = _NeuronNetwork(layers=self.layers, loss_func=self.func_of_loss) # Инициализируем одну нейронку
             model.fit(X=X, Y=Y, size_batch=self.size_batch, learning_rate = self.learning_rate, eps=self.eps, count_of_iteration = self.count_of_iteration, optimizer=self.optimizer, alpha=self.alpha, reporting=self.reporting)
             print(f'Эпоха {epoch+1} обучена | LogLoss: {model.loss_func}')
-            self._dct_of_models[model] = model.loss_func
+            
+            if epoch == 0:
+                self.model = model
+            
+            elif model.loss_func < self.model.loss_func:
+                self.model = model
+                print('Модель обновлена')
+                
+    def predict(self, X):
+        self.model._activate_network(X)
+        return self.model.lst_of_layers[-1].OUTPUT
 
 
